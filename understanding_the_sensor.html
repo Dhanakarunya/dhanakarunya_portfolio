@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Understanding The Sensor - DHT 11</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+   
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+   
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+   
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+   
+  <link href="assets/css/main.css" rel="stylesheet">
+
+ 
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+         
+         
+        <h1 class="sitename">Dhanakarunya S</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio" class="active">Assignment</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="page-title dark-background">
+      <div class="container position-relative">
+        <h1>Understanding The Sensor</h1>
+      </div>
+    </div> 
+
+     
+    <section id="portfolio-details" class="portfolio-details section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <h2>Goal</h2>
+        <br>
+        <p>To integrate the DHT11 sensor with the ESP32 microcontroller and log temperature and humidity data to Google Sheets via a Web App.</p>
+        <br>
+        <h2> DHT11 Sensor Overview</h2>
+        <br>
+        <p>The DHT11 is a basic, low-cost digital temperature and humidity sensor. It uses a capacitive humidity sensor and a thermistor to measure ambient air conditions and outputs the data via a digital signal. While it's less accurate than the DHT22, it is suitable for many simple IoT applications.</p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Feature</th>
+                <th scope="col">DHT11</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th scope="row">1</th>
+                <td>Temperature Range</td>
+                <td>0 to 50 °C</td>
+                </tr>
+                <tr>
+                <th scope="row">2</th>
+                <td>Temperature Accuracy</td>
+                <td>±2 °C</td>
+                </tr>
+                <tr>
+                <th scope="row">3</th>
+                <td>Humidity Range</td>
+                <td>20% to 90% RH</td>
+                </tr>
+                <tr>
+                <th scope="row">4</th>
+                <td>Humidity Accuracy</td>
+                <td>±5% RH</td>
+                </tr>
+                <tr>
+                <th scope="row">5</th>
+                <td>Sampling Rate</td>
+                <td>1 Hz (1 reading/sec)</td>
+                </tr>
+                <tr>
+                <th scope="row">6</th>
+                <td>Resolution</td>
+                <td>Low</td>
+                </tr>
+                <tr>
+                <th scope="row">7</th>
+                <td>Data Format</td>
+                <td>Digital (single wire)</td>
+                </tr>
+                <tr>
+                <th scope="row">8</th>
+                <td>Durability</td>
+                <td>Less durable</td>
+                </tr>
+                <tr>
+                <th scope="row">9</th>
+                <td>Price</td>
+                <td>Cheaper</td>
+                </tr>
+            </tbody>
+            </table>
+            <br>
+            <h2>Microcontroller - ESP32</h2>
+            <p>The ESP32 is a powerful, low-cost microcontroller with built-in Wi-Fi and Bluetooth capabilities. It is ideal for IoT projects that require internet connectivity, such as uploading sensor data to Google Sheets.</p>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Feature</th>
+                    <th scope="col">Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="row">1</th>
+                    <td>Microcontroller</td>
+                    <td>Tensilica Xtensa LX6 Dual Core</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">2</th>
+                    <td>Clock Speed</td>
+                    <td>Up to 240 MHz</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">3</th>
+                    <td>Flash Memory</td>
+                    <td>Typically 4MB or more</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">4</th>
+                    <td>RAM</td>
+                    <td>~520 KB SRAM</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">5</th>
+                    <td>Wi-Fi</td>
+                    <td>802.11 b/g/n</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">6</th>
+                    <td>Bluetooth</td>
+                    <td>v4.2 BR/EDR and BLE</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">7</th>
+                    <td>GPIO Pins</td>
+                    <td>34 (varies by board)</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">8</th>
+                    <td>Operating Voltage</td>
+                    <td>3.0V to 3.6V (commonly 3.3V)</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">9</th>
+                    <td>Power Modes</td>
+                    <td>Active, Light Sleep, Deep Sleep</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">10</th>
+                    <td>Interfaces</td>
+                    <td>UART, SPI, I2C, PWM, ADC, DAC, etc.</td>
+                    </tr>
+                </tbody>
+                </table>
+
+
+        
+
+        <h2>Readings of DHT 11 from Digital Signal Oscilloscope : </h2>
+        <br>
+        
+        <br>
+        <img src="assets/img/protosem/sensor/1.webp" alt="" class="img-fluid services-img">
+        <br>
+        <br>
+        <img src="assets/img/protosem/sensor/2.webp" alt="" class="img-fluid services-img">
+        <br>
+        <br>
+        <h2><b>Circuit Connection : </b></h2>
+        <br>
+        <img src="assets/img/protosem/sensor/7.webp" alt="" class="img-fluid services-img">
+        <br>
+        <br>
+        <h3>Common Errors and Fixes</h3>
+        <br>
+        <h4>1.HTTP Response Code:</h4>
+        <p>The request didn’t reach the server.</p>
+        
+        <h6>Common Causes:</h6>
+        <ul>
+            <li><i><span>Using http:// instead of https:// (Google Scripts require HTTPS)</span></i></li>
+            <li><i><span>Web App not deployed properly (must be "Web App" and accessible to "Anyone")</span></i></li>
+            <li><i><span>No internet or DNS failure</span></i></li>
+            <li><i><span>Using WiFiClient instead of WiFiClientSecure</span></i></li>
+            <li><i><span>Incorrect Web App URL or typos</span></i></li>
+        </ul>
+        
+        <h6>Fix</h6>
+        <ul>
+            <li><i><span>Use HTTPS in URL</span></i></li>
+            <li><i><span>Deploy script as Web App with access set to "Anyone"</span></i></li>
+            <li><i><span>Use WiFiClientSecure client; client.setInsecure();</span></i></li>
+        </ul>
+
+        <br>
+
+        <h4>2.HTTP Response Code: -11</h4>
+        <p>The ESP timed out waiting for a server response.</p>
+        
+        <h6>Common Causes:</h6>
+        <ul>
+            <li><i><span>Slow or no response from Google server</span></i></li>
+            <li><i><span>Wrong URL or incorrect deployment</span></i></li>
+            <li><i><span>Using HTTP instead of HTTPS</span></i></li>
+            <li><i><span>Weak Wi-Fi signal</span></i></li>
+        </ul>
+
+        
+        <h6>Fix</h6>
+        <ul>
+            <li><i><span>Ensure URL is HTTPS and correct</span></i></li>
+            <li><i><span>Use WiFiClientSecure</span></i></li>
+            <li><i><span>Check deployment access</span></i></li>
+            <li><i><span>Increase timeout if needed</span></i></li>
+        </ul>
+
+        <h4>3.Fatal estpool Error</h4>
+        <p>Usually due to toolchain, serial communication issues, or corrupt library installation.</p>
+
+        
+        <h6>Fix</h6>
+        <ul>
+            <li><i><span>Reinstall board package or libraries</span></i></li>
+            <li><i><span>Download from wch-ic.com</span></i></li>
+        </ul>
+        <br>
+        <h2>Arduino Code</h2>
+        <br>
+        <img src="assets/img/protosem/sensor/3.webp" alt="" class="img-fluid services-img">
+        <br>
+        <br>
+        <img src="assets/img/protosem/sensor/4.webp" alt="" class="img-fluid services-img">
+        <br>
+        <br>
+        <br>
+        <h3>OUTPUT</h3>
+        <br>
+        <img src="assets/img/protosem/sensor/5.webp" alt="" class="img-fluid services-img">
+        <br>
+        <br>
+        <br>
+        <h3>Readings</h3>
+        <br>
+        <img src="assets/img/protosem/sensor/6.webp" alt="" class="img-fluid services-img">
+        <br>
+        <br>
+
+
+
+
+
+      </div>
+
+    </section> 
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+    <div class="container">
+      
+      <div class="social-links d-flex justify-content-center">
+        <a href=""><i class="bi bi-twitter-x"></i></a>
+        <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-skype"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  
+  <div id="preloader"></div>
+
+  
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
